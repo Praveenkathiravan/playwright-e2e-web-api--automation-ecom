@@ -1,0 +1,2 @@
+[INFO] [2026-05-28T19:22:28.241Z] Launching site: https://rahulshettyacademy.com/client/
+[INFO] [2026-05-28T19:22:30.331Z] Navigated to https://rahulshettyacademy.com/client/
