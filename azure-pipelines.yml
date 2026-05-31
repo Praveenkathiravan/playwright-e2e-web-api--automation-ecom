@@ -10,14 +10,11 @@ steps:
     versionSpec: '20.x'
   displayName: 'Install Node.js'
 
-- script: npm ci
-  displayName: 'Install dependencies'
-
-- script: npx playwright install --with-deps
-  displayName: 'Install Playwright browsers'
-
-- script: npx playwright test
-  displayName: 'Run Playwright tests'
+- script: |
+    npm ci
+    npx playwright install --with-deps
+    npx playwright test
+  displayName: 'Install dependencies and run Playwright tests'
   env:
     CI: 'true'
 
@@ -25,7 +22,7 @@ steps:
   condition: always()
   inputs:
     testResultsFormat: 'JUnit'
-    testResultsFiles: 'test-results/**/*.xml'
+    testResultsFiles: 'test-results/*.xml'
   displayName: 'Publish JUnit results'
 
 - task: PublishPipelineArtifact@1
