@@ -46,6 +46,8 @@ export default defineConfig({
         suiteTitle: true,
       },
     ],
+    ['junit', { outputFile: 'test-results/results.xml' }],
+  ['html', { open: 'never' }]
   ],
   
   use: {
