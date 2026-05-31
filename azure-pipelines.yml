@@ -11,10 +11,12 @@ steps:
   displayName: 'Install Node.js'
 
 - script: |
-    npm ci
+    rm -rf node_modules
+    rm -f package-lock.json
+    npm install  # Re-generates a fresh lockfile compatible with the agent
     npx playwright install --with-deps
     npx playwright test
-  displayName: 'Install dependencies and run Playwright tests'
+  displayName: 'Clean and Rebuild Dependencies'
   env:
     CI: 'true'
 
