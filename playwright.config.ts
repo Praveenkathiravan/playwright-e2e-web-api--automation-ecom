@@ -36,18 +36,10 @@ export default defineConfig({
   workers: process.env.CI ? 1 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: [
-    ['line'], // Clean console output while running
-    ['html'], // Playwright's default HTML report
-    [
-      'allure-playwright',
-      {
-        detail: true,
-        outputFolder: 'allure-results', // Where raw data will be stored
-        suiteTitle: true,
-      },
-    ],
+    ['list'],
+    ['allure-playwright', { detail: true, outputFolder: 'allure-results', suiteTitle: true }],
     ['junit', { outputFile: 'test-results/results.xml' }],
-  ['html', { open: 'never' }]
+    ['html', { open: 'never' }],
   ],
   
   use: {
