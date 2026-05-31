@@ -14,6 +14,13 @@ steps:
     versionSpec: '20.x'
   displayName: 'Install Node.js'
 
+- script: |
+    echo "Current directory:"
+    pwd
+    echo "Files in root:"
+    ls -la
+  displayName: 'Debug - check workspace'
+
 - script: npm ci
   displayName: 'Install dependencies'
 
